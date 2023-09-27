@@ -25,8 +25,11 @@ function cargarEventListeners() {
 function regresar(e) {
   e.preventDefault();
 
-  if (e.target.classList.contains("material-symbols-outlined")) {
-    location.href = "../index.html";
+  if (e.target.classList.contains("material-symbols-rounded")) {
+    location.href = "../proyectos.html";
+  }
+  if (e.target.classList.contains("regresar")) {
+    location.href = "../proyectos.html";
   }
 }
 

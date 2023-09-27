@@ -107,6 +107,16 @@ span {
   background-color: var(--primario);
   padding: 1.2rem;
   color: var(--oscuro);
+  transition: 0.5s;
+}
+
+.navbar-main a:not(:hover) {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 1.2rem;
+  transition: 0.5s;
 }
 
 .nav-bg {
