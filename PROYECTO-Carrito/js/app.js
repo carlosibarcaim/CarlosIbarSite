@@ -3,10 +3,13 @@ const carrito = document.querySelector("#carrito");
 const listaCursos = document.querySelector("#lista-cursos");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
+const back = document.querySelector(".back");
 let articulosCarrito = [];
 
 cargarEventListeners();
 function cargarEventListeners() {
+  // Regresar a la pagina principal
+  back.addEventListener("click", regresar);
   // Cuando agregas un curso al presionar el boton "Agregar al carrito"
   listaCursos.addEventListener("click", agregarCurso);
   // Elimina curso del carrito
@@ -19,6 +22,14 @@ function cargarEventListeners() {
 }
 
 // FUNCIONES
+function regresar(e) {
+  e.preventDefault();
+
+  if (e.target.classList.contains("material-symbols-outlined")) {
+    location.href = "../index.html";
+  }
+}
+
 function agregarCurso(e) {
   e.preventDefault();
 
