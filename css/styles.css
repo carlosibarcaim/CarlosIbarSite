@@ -149,6 +149,7 @@ span {
   display: flex;
   align-items: end;
 }
+
 /*Boton Hero*/
 .boton {
   text-decoration: none;
@@ -156,7 +157,6 @@ span {
   margin: 1rem;
   color: var(--blanco);
   padding: 1rem 3rem;
-  text-decoration: none;
   border-radius: 0.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -307,4 +307,28 @@ span {
 /*Footer*/
 footer {
   text-align: center;
+}
+
+/* PROYECTOS */
+
+.proyectos {
+  display: grid;
+  gap: 10px;
+  text-align: center;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.proyecto__nombre {
+  text-underline-offset: none;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+@media (min-width: 900px) {
+  .proyectos {
+    display: grid;
+    gap: 10px;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -3,7 +3,7 @@ const carrito = document.querySelector("#carrito");
 const listaCursos = document.querySelector("#lista-cursos");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
-const back = document.querySelector(".back");
+const back = document.querySelector(".material-symbols-rounded");
 let articulosCarrito = [];
 
 cargarEventListeners();

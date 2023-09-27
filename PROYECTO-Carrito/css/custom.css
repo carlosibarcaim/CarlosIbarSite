@@ -192,19 +192,20 @@ ul {
 }
 
 .back {
-  height: 1px;
+  height: 25px;
   width: 25px;
   margin: auto;
 }
+
+/*Boton de regreso en barra de navegacion*/
 
 .material-symbols-rounded {
   font-variation-settings: 0, 700, 200, 48;
   color: rgb(0, 0, 0);
   height: auto;
   width: auto;
-  border-radius: 50%;
+  border-radius: 20%;
   background-color: rgba(170, 2, 24, 0.603);
-  text-align: center;
 }
 
 .material-symbols-rounded:hover {
@@ -223,4 +224,34 @@ ul {
 .regresar {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+}
+
+@media (min-width: 550px) {
+  .material-symbols-rounded {
+    font-variation-settings: 0, 700, 200, 48;
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: auto;
+    border-radius: 20%;
+    background-color: rgba(170, 2, 24, 0.603);
+    text-align: center;
+  }
+
+  .material-symbols-rounded:hover {
+    background-color: rgba(170, 2, 24, 1);
+    transition: 0.5s;
+    cursor: pointer;
+    color: #e1e1e1;
+  }
+
+  .material-symbols-rounded:not(:hover) {
+    background-color: rgba(170, 2, 24, 0.603);
+    transition: 0.5s;
+    color: rgb(0, 0, 0);
+  }
+
+  .regresar {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
 }
