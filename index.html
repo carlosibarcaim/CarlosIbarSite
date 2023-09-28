@@ -193,36 +193,52 @@
         <h2>Contacto</h2>
       </section>
 
-      <form class="formulario">
+      <form
+        action="https://formsubmit.co/carlosibarcaim@gmail.com"
+        method="POST"
+        class="formulario"
+      >
         <fieldset>
           <legend>
             Ingresa tu información en el formulario para contactarnos
           </legend>
           <div class="container-fields">
             <div class="field">
-              <label>Nombre:</label>
-              <input type="text" placeholder="Tu nombre" />
+              <label for="nombre">Nombre:</label>
+              <input type="text" name="name" required placeholder="Tu nombre" />
             </div>
 
-            <div class="field">
-              <label for="">Teléfono:</label>
+            <!--<div class="field">
+              <label for="telefono">Teléfono:</label>
               <input type="tel" placeholder="Teléfono" />
+            </div>-->
+
+            <div class="field">
+              <label for="email">email:</label>
+              <input type="email" name="email" required placeholder="email" />
             </div>
 
             <div class="field">
-              <label for="">email:</label>
-              <input type="email" placeholder="email" />
+              <label for="Asunto">Asunto</label>
+              <input type="text" name="subject" required placeholder="Asunto" />
             </div>
 
             <div class="field">
-              <label for="">Mensaje:</label>
-              <textarea></textarea>
+              <label for="mensaje">Mensaje:</label>
+              <textarea name="coments" required></textarea>
             </div>
           </div>
 
           <div class="alinear-derecha">
             <button class="boton" type="submit">Enviar</button>
           </div>
+          <!-- EVITAR SALIR DE PAGINA DE INICIO -->
+          <input
+            type="hidden"
+            name="_next"
+            value="http://127.0.0.1:5500/index.html"
+          />
+          <input type="hidden" name="_captcha" value="false" />
         </fieldset>
       </form>
     </main>
