@@ -24,16 +24,18 @@
   </head>
   <!--Encabezado de la pagina-->
   <header>
-    <h1 class="titulo">Ing. Carlos Ibar <span class="freelancer"></span></h1>
+    <h1 class="titulo" id="inicio">
+      Ing. Carlos Ibar <span class="freelancer"></span>
+    </h1>
   </header>
   <!--Barra de navegacion-->
   <body>
     <div class="nav-bg">
       <nav class="navbar-main">
-        <a href="index.html">Inicio</a>
-        <a href="#">Sobre mi</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobreMi">Sobre mi</a>
         <a href="Proyectos.html">Proyectos</a>
-        <a href="#">Contacto</a>
+        <a href="#contactame">Contacto</a>
       </nav>
     </div>
     <!--Contenido del hero-->
@@ -67,14 +69,14 @@
         <p>Estado de Mexico, Tultitlan</p>
 
         <button class="boton">
-          <a href="#">Contactar</a>
+          <a href="#contacto">Contactar</a>
         </button>
       </div>
     </section>
 
     <!--Contenido de los servicios de Freelancer-->
     <main class="container sombra">
-      <h2>Mis servicios</h2>
+      <h2 id="sobreMi">Sobre mi</h2>
       <div class="servicios">
         <section class="servicio">
           <div class="icono">
@@ -101,8 +103,11 @@
           </div>
           <h3>Diseño web</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            doloribus tempore veritatis laborum ad possimus?
+            Soy autodidacta, tengo una certificación de JavaScript esencial y me
+            apasiona la programación, actualmente estoy desarrollando la
+            maquetacion de mi propio sitio web, tengo planeado aprender React y
+            posteriormente aprender algunas tecnologias de backend y dedicarme
+            al desarrollo web.
           </p>
         </section>
 
@@ -189,8 +194,8 @@
       <!--Aqui termina el contenido de los servicios-->
 
       <!--Contenido del formulario-->
-      <section class="contacto">
-        <h2>Contacto</h2>
+      <section class="contacto" id="contactame">
+        <h2 id="contacto">Contactame</h2>
       </section>
 
       <form

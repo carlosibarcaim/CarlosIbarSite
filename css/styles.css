@@ -12,9 +12,14 @@
 html {
   font-size: 65%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   /*scroll-snap-type: y mandatory;*/
 }
 
+/*.nav-bg {
+  position: fixed;
+  margin-top: -10rem;
+}*/
 .navbar-main,
 .servicio:nth-child(2),
 .formulario {
@@ -294,12 +299,12 @@ span {
   border: none;
 }
 
-.boton[type="submit"]:hover {
+button:hover {
   transform: scale(1.15);
   transition: all 0.5s;
 }
 
-.boton[type="submit"]:not(:hover) {
+button:not(:hover) {
   transform: scale(1);
   transition: all 0.5s;
 }

@@ -4,10 +4,13 @@ const listaCursos = document.querySelector("#lista-cursos");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const back = document.querySelector(".material-symbols-rounded");
+const contactarBtn = document.querySelector("boton");
 let articulosCarrito = [];
 
 cargarEventListeners();
 function cargarEventListeners() {
+  //Dirigir al form de contacto
+  contactarBtn.addEventListener("click", dirigirContacto);
   // Regresar a la pagina principal
   back.addEventListener("click", regresar);
   // Cuando agregas un curso al presionar el boton "Agregar al carrito"
@@ -22,6 +25,15 @@ function cargarEventListeners() {
 }
 
 // FUNCIONES
+function dirigirContacto(e) {
+  e.preventDefault();
+
+  if (e.target.classList.contains("boton")) {
+    console.log("Contactando...");
+    //location.href = "../index.html/#contacto";
+  }
+}
+
 function regresar(e) {
   e.preventDefault();
 
