@@ -1,4 +1,4 @@
-const contactar = document.querySelector("boton");
+const contactar = document.querySelector("#botonContacto");
 
 cargarEventListeners();
 
@@ -10,6 +10,9 @@ function dirigirContacto(e) {
   e.preventDefault();
 
   if (e.target.classList.contains("boton")) {
-    console.log("dirigiendo...");
+    location.href = "../index.html#contacto";
+  }
+  if (e.target.classList.contains("#botonContacto")) {
+    location.href = "../index.html#contacto";
   }
 }

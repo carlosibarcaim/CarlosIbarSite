@@ -4,15 +4,12 @@ const listaCursos = document.querySelector("#lista-cursos");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const back = document.querySelector(".material-symbols-rounded");
-const contactar = document.querySelector(".boton");
 let articulosCarrito = [];
 
 cargarEventListeners();
 function cargarEventListeners() {
   // Regresar a la pagina de los proyectos
   back.addEventListener("click", regresar);
-  // Dirigir a la seccion de contacto
-  //contactar.addEventListener("click", dirigirContacto);
   // Cuando agregas un curso al presionar el boton "Agregar al carrito"
   listaCursos.addEventListener("click", agregarCurso);
   // Elimina curso del carrito
