@@ -211,6 +211,8 @@ span {
 
 .icono svg {
   color: var(--oscuro);
+  height: 10rem;
+  width: 5rem;
 }
 
 /* Imagenes de proyectos*/

@@ -4,15 +4,15 @@ const listaCursos = document.querySelector("#lista-cursos");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const back = document.querySelector(".material-symbols-rounded");
-const contactarBtn = document.querySelector("boton");
+const contactar = document.querySelector(".boton");
 let articulosCarrito = [];
 
 cargarEventListeners();
 function cargarEventListeners() {
-  //Dirigir al form de contacto
-  contactarBtn.addEventListener("click", dirigirContacto);
-  // Regresar a la pagina principal
+  // Regresar a la pagina de los proyectos
   back.addEventListener("click", regresar);
+  // Dirigir a la seccion de contacto
+  //contactar.addEventListener("click", dirigirContacto);
   // Cuando agregas un curso al presionar el boton "Agregar al carrito"
   listaCursos.addEventListener("click", agregarCurso);
   // Elimina curso del carrito
@@ -25,14 +25,6 @@ function cargarEventListeners() {
 }
 
 // FUNCIONES
-function dirigirContacto(e) {
-  e.preventDefault();
-
-  if (e.target.classList.contains("boton")) {
-    console.log("Contactando...");
-    //location.href = "../index.html/#contacto";
-  }
-}
 
 function regresar(e) {
   e.preventDefault();
@@ -55,6 +47,8 @@ function agregarCurso(e) {
 }
 
 function eliminarCurso(e) {
+  e.preventDefault();
+
   if (e.target.classList.contains("borrar-curso")) {
     const cursoId = e.target.getAttribute("data-id");
     console.log(cursoId);
@@ -93,7 +87,7 @@ function leerDatosCurso(curso) {
     articulosCarrito = [...articulosCarrito, infoCurso];
   }
 
-  console.log(articulosCarrito);
+  //console.log(articulosCarrito);
 
   carritoHTML();
 }
