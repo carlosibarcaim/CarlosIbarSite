@@ -16,6 +16,10 @@ html {
   /*scroll-snap-type: y mandatory;*/
 }
 
+a {
+  text-decoration: none;
+}
+
 /*.nav-bg {
   position: fixed;
   margin-top: -10rem;
@@ -358,4 +362,8 @@ footer {
 .proyecto img:not(:hover) {
   transform: scale(1);
   transition: 0.5s;
+}
+
+.proyecto__nombre {
+  font-family: "Qucksans", sans-serif;
 }
