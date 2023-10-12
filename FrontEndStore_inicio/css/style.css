@@ -206,17 +206,18 @@ h3 {
 /*Nosotros*/
 .nosotros {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(536px, 1fr));
   margin: 0, auto;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .nosotros {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 0, auto;
     column-gap: 2rem;
   }
-}
+}*/
 
 .nosotros_texto {
   text-align: justify;
@@ -226,29 +227,53 @@ h3 {
 
 .nosotros_img {
   max-width: 100%;
-  grid-row: 1/2;
+  grid-row: 1/1;
+  text-align: center;
+  margin: 3rem;
 }
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .nosotros_img {
+    display: grid;
     max-width: 90%;
     margin: 2rem;
     padding: 2rem;
     grid-column: 2/3;
   }
-}
+}*/
 
 .iconos {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 25%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  gap: 2rem;
 }
 
-@media (min-width: 769px) {
+/*@media (min-width: 769px) {
   .iconos {
     display: flex;
     flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+    height: auto;
     justify-content: space-between;
     max-width: 100%;
   }
 }
+*/
+
+.icono {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  gap: 2rem;
+}
+
+/*@media (min-width: 769px) {
+  .icono {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+  }
+}*/
