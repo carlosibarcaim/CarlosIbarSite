@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   //Crear OBJETO que contenga los campos del formulario
-  const email = {
+  const ObjEmail = {
     email: "",
+    CC: "",
     nombre: "",
     asunto: "",
     mensaje: "",
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //Seleccionar los elementos de la interfaz
   const inputEmail = document.querySelector("#email");
+  const inputCC = document.querySelector("#CC");
   const inputNombre = document.querySelector("#nombre");
   const inputAsunto = document.querySelector("#asunto");
   const inputMensaje = document.querySelector("#mensaje");
@@ -16,12 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnSubmit = document.querySelector("#formulario button[type='submit']");
   const btnReset = document.querySelector("#formulario button[type='reset']");
   const spinner = document.querySelector("#spinner");
+  const proyectos = document.querySelector(".regresar");
 
   // Crear callbacks
   inputEmail.addEventListener("input", validar);
   inputNombre.addEventListener("input", validar);
   inputAsunto.addEventListener("input", validar);
   inputMensaje.addEventListener("input", validar);
+  inputCC.addEventListener("input", validar);
+  proyectos.addEventListener("click", irProyectos);
 
   formulario.addEventListener("submit", enviarEmail);
 
@@ -34,8 +39,30 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       spinner.classList.remove("flex");
       spinner.classList.add("hidden");
+
       // Reiniciar el objeto
       resetFormulario();
+
+      //Crear una alerta que avise que se envió correctamente
+      const emailEnviado = document.createElement("P");
+      emailEnviado.classList.add(
+        "bg-green-500",
+        "text-white",
+        "p-2",
+        "text-center",
+        "rounded-lg",
+        "mt-10",
+        "font-bold",
+        "text-sm",
+        "uppercase"
+      );
+
+      emailEnviado.textContent = "Email enviado correctamente";
+
+      formulario.appendChild(emailEnviado);
+      setTimeout(() => {
+        emailEnviado.remove();
+      }, 2000);
     }, 3000);
   }
 
@@ -47,14 +74,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function validar(e) {
-    if (e.target.value.trim() === "") {
+    if (e.target.value.trim() === "" && e.target.id !== "CC") {
       //Si el campo esta vacio mostrar la alerta con los parametros
       mostrarAlerta(
         `El campo ${e.target.id} es obligatorio`,
         e.target.parentElement
       );
-      email[e.target.name] = "";
+      ObjEmail[e.target.name] = "";
       comprobarEmail();
+
       return;
     }
 
@@ -64,13 +92,25 @@ document.addEventListener("DOMContentLoaded", function () {
         e.target.parentElement
       );
       comprobarEmail();
-      email[e.target.name] = "";
+      ObjEmail[e.target.name] = "";
+      return;
+    }
+
+    if (!validarEmail(e.target.value) && e.target.id === "CC") {
+      mostrarAlerta(
+        "No es una direccion de email valida",
+        e.target.parentElement
+      );
+
+      comprobarEmail();
+      ObjEmail[e.target.name] = "";
+      limpiarAlerta();
       return;
     }
 
     limpiarAlerta(e.target.parentElement);
 
-    email[e.target.name] = e.target.value.trim().toLowerCase();
+    ObjEmail[e.target.name] = e.target.value.trim().toLowerCase();
 
     comprobarEmail();
   }
@@ -106,7 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funcion para comprobar si todos los campos están llenos y utilizar boton de enviar
   function comprobarEmail() {
-    if (Object.values(email).includes("")) {
+    if (
+      ObjEmail["email"] === "" ||
+      ObjEmail["nombre"] === "" ||
+      ObjEmail["asunto"] === "" ||
+      ObjEmail["mensaje"] === ""
+    ) {
       btnSubmit.classList.add("opacity-50");
       btnSubmit.disabled = true;
     } else {
@@ -117,12 +162,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funcion para resetear el formulario
   function resetFormulario() {
-    email.email = "";
-    email.nombre = "";
-    email.asunto = "";
-    email.mensaje = "";
+    ObjEmail.email = "";
+    ObjEmail.nombre = "";
+    ObjEmail.CC = "";
+    ObjEmail.asunto = "";
+    ObjEmail.mensaje = "";
 
     formulario.reset();
+
     comprobarEmail();
+  }
+
+  // Boton para regresar a los proyectos
+  function irProyectos(e) {
+    e.preventDefault();
+
+    location.href = "../proyectos.html";
   }
 });
