@@ -2,8 +2,8 @@
 :root {
   --blanco: #ffffff;
   --oscuro: #212121;
-  --primario: #ffc107;
-  --secundario: #0097a7;
+  --primario: #d9b310;
+  --secundario: #0b3c5d;
   --gris: #757575;
   --freelancer: 1.5rem;
   --grisClaro: #dfe9f3;
@@ -161,12 +161,11 @@ span {
 
 /*Boton Hero*/
 .boton {
-  text-decoration: none;
   background-color: var(--secundario);
   margin: 1rem;
   color: var(--blanco);
   padding: 1rem 3rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   width: 90%;
