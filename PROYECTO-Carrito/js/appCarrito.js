@@ -6,8 +6,17 @@ const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const back = document.querySelector(".material-symbols-rounded");
 let articulosCarrito = [];
 
+// EVENT LISTENERS
 cargarEventListeners();
+
 function cargarEventListeners() {
+  // Muestra los cursos del local storage
+  document.addEventListener("DOMContentLoaded", () => {
+    articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carritoHTML();
+  });
+
   // Regresar a la pagina de los proyectos
   back.addEventListener("click", regresar);
   // Cuando agregas un curso al presionar el boton "Agregar al carrito"
@@ -118,7 +127,14 @@ function carritoHTML() {
     `;
     // Agrega el HTML del carrito en el tbody
     contenedorCarrito.appendChild(row);
+
+    // Agregar el carrito de compras al Storage
+    sincronizarStorage();
   });
+}
+
+function sincronizarStorage() {
+  localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
 }
 
 //ELIMINA LOS CURSOS DEL TBDOY
