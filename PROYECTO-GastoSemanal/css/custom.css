@@ -1,7 +1,7 @@
 body {
     background: #000428;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #004e92, #000428);  
-background: linear-gradient(to right, #004e92, #000428); 
+background: -webkit-linear-gradient(to right, #7e1111, #001aff);  
+background: linear-gradient(to right, #000000, #494f81); 
 }
 header {
     margin: 30px 0;
@@ -10,7 +10,7 @@ header {
     padding:20px;
 }
 .contenido-principal {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 30px;
     border-radius: 20px;
 }

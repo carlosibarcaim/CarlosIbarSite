@@ -199,59 +199,46 @@ ul {
 
 /*Boton de regreso en barra de navegacion*/
 
-.material-symbols-rounded {
+.regresar{
   font-variation-settings: 0, 700, 200, 48;
   color: rgb(0, 0, 0);
   height: auto;
   width: auto;
-  border-radius: 20%;
+  transition: .5s;
   background-color: rgba(170, 2, 24, 0.603);
 }
 
-.material-symbols-rounded:hover {
+.regresar:hover {
   background-color: rgba(170, 2, 24, 1);
   transition: 0.5s;
   cursor: pointer;
   color: #e1e1e1;
-}
 
-.material-symbols-rounded:not(:hover) {
-  background-color: rgba(170, 2, 24, 0.603);
-  transition: 0.5s;
-  color: rgb(0, 0, 0);
 }
 
 .regresar {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  
 }
 
-@media (min-width: 550px) {
-  .material-symbols-rounded {
+@media (min-width: 700px) {
+  .regresar {
     font-variation-settings: 0, 700, 200, 48;
     color: rgb(0, 0, 0);
     height: auto;
     width: auto;
-    border-radius: 20%;
+    transition: .5s;
     background-color: rgba(170, 2, 24, 0.603);
     text-align: center;
+    margin-inline : 20px;
   }
 
-  .material-symbols-rounded:hover {
+  .regresar:hover {
     background-color: rgba(170, 2, 24, 1);
     transition: 0.5s;
     cursor: pointer;
     color: #e1e1e1;
-  }
-
-  .material-symbols-rounded:not(:hover) {
-    background-color: rgba(170, 2, 24, 0.603);
-    transition: 0.5s;
-    color: rgb(0, 0, 0);
-  }
-
-  .regresar {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-  }
+  }  
 }
+

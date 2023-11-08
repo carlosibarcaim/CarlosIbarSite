@@ -3,6 +3,7 @@
 const formulario = document.querySelector("#agregar-gasto");
 const listaGastos = document.querySelector("#gastos ul");
 const restanteDiv = document.querySelector(".restante");
+const btnRegresar = document.querySelector(".regresar");
 
 // EVENTOS
 
@@ -12,6 +13,8 @@ function addEventListeners() {
 
   formulario.addEventListener("submit", agregarGasto);
 }
+
+btnRegresar.addEventListener("click", regresar);
 
 // CLASES
 
@@ -149,6 +152,11 @@ let presupuesto;
 
 // FUNCIONES
 
+function regresar(){
+  console.log("regresando...")
+  location.href = "../Proyectos.html";
+}
+
 function preguntarPresupuesto() {
   const presupuestoUsuario = prompt("¿Cual es tu presupuesto?");
 
@@ -218,3 +226,4 @@ function eliminarGasto(id){
 
   ui.comprobarPresupuesto(presupuesto);
 }
+
