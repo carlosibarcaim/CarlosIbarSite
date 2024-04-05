@@ -336,7 +336,7 @@ footer {
   display: grid;
   gap: 10px;
   text-align: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .proyecto__nombre {
